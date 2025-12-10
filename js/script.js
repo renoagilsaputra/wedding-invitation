@@ -4,10 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     button.addEventListener("click", function (e) {
         e.preventDefault();
-
+        const soundToggleButton = document.getElementById('music-btn');
+        player.unMute();
+        soundToggleButton.innerHTML = '<i class="fa fa-volume-off"></i>';
         // Ambil semua section setelah hero
         const allSections = document.querySelectorAll("section:not(.hero)");
-
+       
+        
         // Tampilkan semuanya
         allSections.forEach(sec => sec.classList.add("show"));
 
