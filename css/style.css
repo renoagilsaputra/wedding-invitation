@@ -4,6 +4,13 @@
   font-style: normal;
 }
 
+.playwrite-no-regular {
+  font-family: "Playwrite NO", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @media (max-width: 576px) {
     .hero h1 {
         font-size: 2rem;      /* ukuran pas untuk HP kecil */
@@ -50,4 +57,13 @@ section.show {
 
 #music-btn:active {
     transform: scale(0.92);
+}
+
+/* Hero */
+.content-hero {
+    background: rgba(0, 0, 0, 0.35); /* Transparansi 35% */
+    backdrop-filter: blur(6px);      /* Blur lembut */
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 50px;
+    padding: 15px 25px;
 }
