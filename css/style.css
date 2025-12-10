@@ -1,3 +1,9 @@
+.alex-brush-regular {
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @media (max-width: 576px) {
     .hero h1 {
         font-size: 2rem;      /* ukuran pas untuk HP kecil */
@@ -38,10 +44,10 @@ section.show {
             transition: transform 0.3s ease;
         }
 
-        #music-btn:hover {
-            transform: scale(1.12);
-        }
+#music-btn:hover {
+    transform: scale(1.12);
+}
 
-        #music-btn:active {
-            transform: scale(0.92);
-        }
+#music-btn:active {
+    transform: scale(0.92);
+}
