@@ -113,24 +113,23 @@ body {
 .bg-candi {
     background-image: url("../image/prambanan.png");
     background-size: cover;
-    opacity: 0.25;
     z-index: 0;
+    opacity: 0.1 !important;
 }
 
 /* Ornamen samping (FULL & TIDAK TRANSPARAN) */
 .bg-side {
     background-image: url("../image/hero-side.png");
-    background-size: cover;        /* FULL layar */
+    background-size: cover;       
     background-position: center bottom;
-    opacity: 1 !important;                    /* 100% solid */
-    z-index: 1;
+    z-index: 0;
 }
 
 
 
 
 /* Soft overlay */
-.hero-overlay {
+/* .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -139,7 +138,7 @@ body {
         rgba(255,255,255,0.95)
     );
     z-index: 1;
-}
+} */
 
 /* Wedding title */
 .wedding-title-wrapper {
@@ -154,7 +153,7 @@ body {
 
 /* Names */
 .couple-name h1 {
-    font-size: 3.8rem;
+    font-size: 2.8rem;
     color: #6b3e2e;
 }
 
@@ -444,9 +443,7 @@ section.show {
 
 /* Countdown */
 .overlay-card {
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(4px);
-    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.04);
 }
 
 .time-box {
