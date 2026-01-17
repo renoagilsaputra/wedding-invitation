@@ -1,7 +1,7 @@
 :root {
     --primer-color: #c1121f;
 }
-
+/* Font */
 .alex-brush-regular {
     font-family: "Alex Brush", cursive;
     font-weight: 400;
@@ -27,6 +27,21 @@
   font-style: normal;
 }
 
+.libre-baskerville {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bree-serif-regular {
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*  */
+
 .text-color-primary {
     color: var(--primer-color) !important;
 }
@@ -45,6 +60,12 @@
    background-color: #550b10 !important;
    border-color: #a50e19  !important;
 }
+
+/* Body */
+body {
+    background-image: url('../image/pattern1.jpeg');
+}
+
 
 /* Hero */
 .hero {
@@ -133,7 +154,7 @@
 
 /* Names */
 .couple-name h1 {
-    font-size: 3.2rem;
+    font-size: 3.8rem;
     color: #6b3e2e;
 }
 
@@ -226,16 +247,24 @@ section.show {
     transform: scale(0.92);
 }
 
-/* Hero */
-.content-hero {
-    background: rgba(0, 0, 0, 0.35);
-    /* Transparansi 35% */
-    backdrop-filter: blur(6px);
-    /* Blur lembut */
-    -webkit-backdrop-filter: blur(6px);
-    border-radius: 50px;
-    padding: 15px 25px;
+/* Opent Invitation */
+
+
+.img-border-premium {
+  padding: 10px;
+  border: 1.5px solid #c9b37e;
+  outline: 4px solid #f3efe4;
+  outline-offset: -6px;
+  border-radius: 14px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Pray */
+#pray {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+ 
 
 /* Gallery */
 .gallery-item {
