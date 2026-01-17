@@ -92,7 +92,7 @@
 .bg-candi {
     background-image: url("../image/prambanan.png");
     background-size: cover;
-    /* opacity: 0.25; */
+    opacity: 0.25;
     z-index: 0;
 }
 
@@ -101,7 +101,7 @@
     background-image: url("../image/hero-side.png");
     background-size: cover;        /* FULL layar */
     background-position: center bottom;
-    opacity: 1;                    /* 100% solid */
+    opacity: 1 !important;                    /* 100% solid */
     z-index: 1;
 }
 
@@ -121,6 +121,9 @@
 }
 
 /* Wedding title */
+.wedding-title-wrapper {
+    margin-top: -2rem !important;
+}
 .wedding-title {
     font-family: 'Raleway', sans-serif;
     letter-spacing: 2px;
