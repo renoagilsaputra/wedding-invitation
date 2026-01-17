@@ -1,3 +1,7 @@
+:root {
+    --primer-color: #c1121f;
+}
+
 .alex-brush-regular {
     font-family: "Alex Brush", cursive;
     font-weight: 400;
@@ -11,6 +15,155 @@
     font-style: normal;
 }
 
+.raleway{
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.allura-regular {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-color-primary {
+    color: var(--primer-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primer-color);
+    border-color: var(--primer-color); 
+}
+
+.btn-primary:hover {
+    background-color: #a50e19;
+    border-color: #a50e19;
+}
+
+.btn-primary:active {
+   background-color: #550b10 !important;
+   border-color: #a50e19  !important;
+}
+
+/* Hero */
+.hero {
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+/* Guest */
+/* Guest name box */
+.guest-box {
+    border: 1.5px solid rgba(107, 62, 46, 0.4);
+    border-radius: 12px;
+    padding: 12px 18px;
+    max-width: 260px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.guest-label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b3e2e;
+    margin-bottom: 4px;
+    opacity: 0.8;
+}
+
+.guest-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #6b3e2e;
+}
+
+/* Background image (candi & ornamen) */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+}
+
+/* Background candi */
+.bg-candi {
+    background-image: url("../image/prambanan.png");
+    background-size: cover;
+    /* opacity: 0.25; */
+    z-index: 0;
+}
+
+/* Ornamen samping (FULL & TIDAK TRANSPARAN) */
+.bg-side {
+    background-image: url("../image/hero-side.png");
+    background-size: cover;        /* FULL layar */
+    background-position: center bottom;
+    opacity: 1;                    /* 100% solid */
+    z-index: 1;
+}
+
+
+
+
+/* Soft overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.85),
+        rgba(255,255,255,0.95)
+    );
+    z-index: 1;
+}
+
+/* Wedding title */
+.wedding-title {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    color: #6b3e2e;
+    font-size: 0.9rem;
+}
+
+/* Names */
+.couple-name h1 {
+    font-size: 3.2rem;
+    color: #6b3e2e;
+}
+
+.ampersand {
+    font-size: 2rem;
+    margin: 0;
+    color: #6b3e2e;
+}
+
+/* Recipient text */
+.recipient-text {
+    font-size: 0.9rem;
+    color: #6b3e2e;
+}
+
+/* Button */
+.btn-open {
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+    .couple-name h1 {
+        font-size: 2.6rem;
+    }
+
+    .ampersand {
+        font-size: 1.6rem;
+    }
+}
+
+
 @media (max-width: 576px) {
     .hero h1 {
         font-size: 2rem;
@@ -20,6 +173,7 @@
     .hero p {
         font-size: 1rem;
     }
+
     section {
         max-width: 600px !important;
     }
@@ -48,7 +202,7 @@ section.show {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #0d6efd;
+    background: var(--primer-color);
     color: white;
     border: none;
     display: flex;
@@ -254,4 +408,30 @@ section.show {
     .carousel .carousel-item img {
         height: 260px;
     }
+}
+
+/* Countdown */
+.overlay-card {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    padding: 1.25rem 0.5rem;
+}
+
+.time-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.time-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.85;
 }

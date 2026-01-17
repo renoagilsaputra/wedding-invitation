@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -36,41 +39,56 @@
     </button>
 
     <!-- HERO SECTION -->
-    <section class="hero d-flex align-items-center min-vh-100 bg-dark text-white position-relative">
-
+    <section class="hero d-flex align-items-center min-vh-100 position-relative">
         <!-- Background Image -->
-        <div class="bg-image position-absolute top-0 start-0 w-100 h-100" style="
-                    background-image: url('image/hero-bg.png');
-                   background-size: cover;
-                   background-position: center;
-                   opacity: 10;
-                  ">
-        </div>
+        <div class="hero-bg bg-candi"></div>
+        <div class="hero-bg bg-side"></div>
 
         <!-- Overlay -->
-        <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.55;"></div>
+        <div class="hero-overlay"></div>
 
-        <!-- Content -->
-        <div class="container position-relative text-center px-4">
-            <div class="content-hero p-2">
-                <h1 class="playwrite-no-regular mt-5">Undangan Pernikahan</h1>
-                <h1 class="fw-bold display-4 display-md-3 display-lg-2 alex-brush-regular" data-aos="fade-in">
-                    Reno & Asyifa
-                </h1>
+        
 
-                <h4 class="lead mt-3 fs-5 fs-md-4">
-                    Kepada Yth. Bapak/Ibu/Saudara/i<br>
+        <div class="container text-center position-relative z-1">
 
-                    <div id="invited-guest"></div>
-
-                </h4>
+            <!-- Title -->
+            <div class="mb-4">
+                <div class="text-uppercase wedding-title" data-aos="zoom-out" data-aos-delay="200">
+                    <div>The</div>
+                    <div class="fw-semibold text-color-primary">Wedding</div>
+                    <div class="fw-semibold text-color-primary">Of</div>
+                </div>
             </div>
 
-            <a href="#" id="open-invitation-btn" class="btn btn-primary btn-lg mt-4 px-4 py-2">
-                <i class="fa fa-envelope"></i> Buka Undangan
-            </a>
+            <!-- Couple Name -->
+            <div class="couple-name mb-4">
+                <h1 class="allura-regular mb-1 text-color-primary" data-aos="fade-right" data-aos-delay="400">Reno</h1>
+                <h2 class="allura-regular ampersand" data-aos="fade-in" data-aos-delay="600">&</h2>
+                <h1 class="allura-regular mt-1 text-color-primary" data-aos="fade-left" data-aos-delay="800">Asyifa</h1>
+            </div>
+
+            <div data-aos="fade-in" data-aos-delay="1000">
+                <!-- Greeting -->
+                <p class="recipient-text mb-4">
+                    Kepada Yth.<br>
+                    Bapak / Ibu / Saudara/i
+                </p>
+                <div class="guest-box mb-4 mx-auto" data-aos="fade-in">
+                    <span class="guest-label">Nama Tamu</span>
+                    <div class="guest-name text-color-primary" id="invited-guest">
+                        Nama Undangan
+                    </div>
+                </div>
+    
+                <!-- Button -->
+                <a href="#" id="open-invitation-btn" class="btn btn-primary btn-open px-4 py-2">
+                    <i class="fa fa-envelope me-2"></i> Buka Undangan
+                </a>
+            </div>
+
         </div>
     </section>
+
 
     <!-- SECTION 1 -->
     <section>
@@ -123,7 +141,7 @@
             </div>
 
 
-         
+
 
 
             <!-- ================= GALLERY SLIDER + THUMBNAILS ================ -->
@@ -147,11 +165,54 @@
             </div>
 
 
-           
+
         </div>
 
 
 
+    </section>
+
+    <section id="countdown">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-8">
+                    <div class="overlay-card p-4 p-md-5 text-center shadow-lg">
+                        <h1 class="mb-2 fw-bold">Menuju Hari Bahagia</h1>
+                        <p class="mb-4 fs-5">1 Juni 2026</p>
+
+
+                        <div class="row g-3" id="countdown-wrapper">
+                            <div class="col-6 col-md-3">
+                                <div class="time-box">
+                                    <div id="days" class="time-number">0</div>
+                                    <div class="time-label">Hari</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="time-box">
+                                    <div id="hours" class="time-number">0</div>
+                                    <div class="time-label">Jam</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="time-box">
+                                    <div id="minutes" class="time-number">0</div>
+                                    <div class="time-label">Menit</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="time-box">
+                                    <div id="seconds" class="time-number">0</div>
+                                    <div class="time-label">Detik</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="footer">
@@ -173,10 +234,11 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-    </script>
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+    <script src="js/countdown.js"></script>
 </body>
 
 </html>
