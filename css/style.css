@@ -1,6 +1,7 @@
 :root {
     --primer-color: #c1121f;
 }
+
 /* Font */
 .alex-brush-regular {
     font-family: "Alex Brush", cursive;
@@ -15,28 +16,28 @@
     font-style: normal;
 }
 
-.raleway{
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+.raleway {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .allura-regular {
-  font-family: "Allura", cursive;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Allura", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .libre-baskerville {
-  font-family: "Libre Baskerville", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+    font-family: "Libre Baskerville", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .bree-serif-regular {
-  font-family: "Bree Serif", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Bree Serif", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -48,7 +49,7 @@
 
 .btn-primary {
     background-color: var(--primer-color);
-    border-color: var(--primer-color); 
+    border-color: var(--primer-color);
 }
 
 .btn-primary:hover {
@@ -57,8 +58,8 @@
 }
 
 .btn-primary:active {
-   background-color: #550b10 !important;
-   border-color: #a50e19  !important;
+    background-color: #550b10 !important;
+    border-color: #a50e19 !important;
 }
 
 /* Body */
@@ -120,7 +121,7 @@ body {
 /* Ornamen samping (FULL & TIDAK TRANSPARAN) */
 .bg-side {
     background-image: url("../image/hero-side.png");
-    background-size: cover;       
+    background-size: cover;
     background-position: center bottom;
     z-index: 0;
 }
@@ -144,6 +145,7 @@ body {
 .wedding-title-wrapper {
     margin-top: -2rem !important;
 }
+
 .wedding-title {
     font-family: 'Raleway', sans-serif;
     letter-spacing: 2px;
@@ -247,23 +249,32 @@ section.show {
 }
 
 /* Opent Invitation */
+#open-invitation {
+    position: relative;
+}
 
+.bg-open-invitation {
+    background-image: url("../image/open-invitation.png");
+    background-size: cover;
+    background-position: center bottom;
+    z-index: 1;
+}
 
 .img-border-premium {
-  padding: 10px;
-  border: 1.5px solid #c9b37e;
-  outline: 4px solid #f3efe4;
-  outline-offset: -6px;
-  border-radius: 14px;
-  background-color: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    border: 1.5px solid #c9b37e;
+    outline: 4px solid #f3efe4;
+    outline-offset: -6px;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Pray */
 #pray {
     background-color: rgba(0, 0, 0, 0.04);
 }
- 
+
 
 /* Gallery */
 .gallery-item {
@@ -463,4 +474,84 @@ section.show {
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.85;
+}
+
+/* Our Story */
+/* Story Stepper */
+.story-stepper {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+/* Garis vertikal */
+.story-stepper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 32px;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+/* Item */
+.story-step {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+/* Icon */
+.story-icon {
+    position: absolute;
+    left: -3.5rem;
+    top: 0;
+    width: 52px;
+    height: 52px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.icon-img-svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Foto */
+.story-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Title */
+.story-step h6 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* Date */
+.story-step span {
+    font-size: 0.85rem;
+    color: #888;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Description */
+.story-step p {
+    color: #666;
+    max-width: 520px;
 }
