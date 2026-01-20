@@ -32,6 +32,8 @@
     <!-- CSS Dynamic Section Hide -->
     <link rel="stylesheet" href="css/style.css">
 
+
+
 </head>
 
 <body>
@@ -112,7 +114,7 @@
 
     <!-- SECTION Pray -->
     <section id="pray">
-        <div class="container py-5">
+        <div class="container py-5 mt-5">
             <div class="p-5">
                 <img src="image/gunungan.png" class="img-fluid d-block mx-auto"
                     style="width: 60px; margin-top: -4rem !important; margin-bottom: 1rem;" alt="gunungan">
@@ -126,42 +128,119 @@
         </div>
     </section>
 
-    <!-- SECTION 3 Galeri -->
-    <section>
+    <!-- SECTION GALERI -->
+    <section id="gallery">
         <div class="container py-5">
-            <h2 class="text-center mb-4">Galeri</h2>
-            <p class="text-center">Foto-foto kenangan kami.</p>
+            <h2 class="text-center mb-3">Galeri</h2>
+            <p class="text-center mb-4">Foto-foto kenangan kami</p>
 
+            <!-- CAROUSEL -->
+            <div id="galleryCarousel" class="carousel slide gallery-center mb-5" data-bs-ride="carousel"
+                data-bs-interval="6000" data-bs-pause="false" data-aos="fade-in">
 
-
-
-
-
-
-            <div class="row mb-5" data-aos="fade-up">
-                <div class="col-md-8 mx-auto">
-                    <img id="mainPreview" src="image/galeri1.JPG" class="img-fluid rounded shadow" loading="lazy">
+                <!-- INDICATORS -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
                 </div>
 
-                <div class="col-12 mt-3 d-flex justify-content-center gap-2">
-                    <img src="image/galeri1.JPG" class="thumb img-thumbnail" style="width:80px;cursor:pointer;"
-                        loading="lazy">
-                    <img src="image/galeri2.JPG" class="thumb img-thumbnail" style="width:80px;cursor:pointer;"
-                        loading="lazy">
-                    <img src="image/galeri3.JPG" class="thumb img-thumbnail" style="width:80px;cursor:pointer;"
-                        loading="lazy">
-                    <img src="image/galeri4.JPG" class="thumb img-thumbnail" style="width:80px;cursor:pointer;"
-                        loading="lazy">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="gallery-item">
+                            <img src="image/galeri1.JPG" class="gallery-img" alt="">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="gallery-item">
+                            <img src="image/galeri2.JPG" class="gallery-img" alt="">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="gallery-item">
+                            <img src="image/galeri3.JPG" class="gallery-img" alt="">
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="gallery-item">
+                            <img src="image/galeri4.JPG" class="gallery-img" alt="">
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- NAVIGATION -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
 
-
-
+            <!-- GRID GALERI -->
+            <div class="row g-3 gallery-grid" data-aos="fade-up">
+                <div class="col-3 col-md-3">
+                    <img src="image/galeri1.JPG" class="img-fluid gallery-grid-img">
+                </div>
+                <div class="col-3 col-md-3">
+                    <img src="image/galeri2.JPG" class="img-fluid gallery-grid-img">
+                </div>
+                <div class="col-3 col-md-3">
+                    <img src="image/galeri3.JPG" class="img-fluid gallery-grid-img">
+                </div>
+                <div class="col-3 col-md-3">
+                    <img src="image/galeri4.JPG" class="img-fluid gallery-grid-img">
+                </div>
+            </div>
         </div>
-
-
-
     </section>
+
+    <!-- MODAL ZOOM -->
+    <div class="modal fade" id="galleryModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <img id="modalImage" src="" class="img-fluid rounded-4 shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL ZOOM IMAGE -->
+    <div class="modal fade" id="galleryModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <img id="modalImage" src="" class="img-fluid rounded-4 shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL ZOOM -->
+    <div class="modal fade" id="galleryModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0 position-relative">
+                    <img id="modalImage" src="" class="img-fluid rounded-4 shadow">
+                    <div class="modal-caption text-center mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- OUR STORY SECTION -->
     <section id="our-story" class="py-5">
@@ -293,6 +372,8 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <script src="js/countdown.js"></script>
+
+    <script src="js/gallery.js"></script>
 </body>
 
 </html>
