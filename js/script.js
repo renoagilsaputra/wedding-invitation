@@ -1,198 +1,211 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* =====================================================
+   GLOBAL STATE
+===================================================== */
+let aosInitialized = false;
 
-    const button = document.querySelector("#open-invitation-btn");
-    const audioPlayer = document.getElementById("bg-music");
-    const soundToggleButton = document.getElementById("music-btn");
-    const musicIcon = document.getElementById("music-icon");
-    const heroSection = document.querySelector(".hero");
+/* =====================================================
+   LOADER – TUNGGU SEMUA ASSET
+===================================================== */
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loading-screen");
+    if (!loader) return;
 
-    // TOMBOL BUKA UNDANGAN
-    button.addEventListener("click", function (e) {
-        e.preventDefault();
+    setTimeout(() => {
+        loader.classList.add("hidden");
 
-        // Play musik saat undangan dibuka
-        audioPlayer.volume = 1.0;
-        audioPlayer.play().catch(err => console.log("Autoplay blocked:", err));
+        // Init GSAP setelah loader benar-benar hilang
+        initGSAP();
 
-        musicIcon.className = "fa fa-volume-off";
+    }, 500);
+});
 
-        // Sembunyikan hero
-        const heroSection = document.querySelector(".hero");
-        const targetSection = document.getElementById("open-invitation");
+/* =====================================================
+   DOM READY
+===================================================== */
+document.addEventListener("DOMContentLoaded", () => {
 
-        if (heroSection) {
-            heroSection.classList.add("hide");
-
-            heroSection.addEventListener("transitionend", () => {
-                heroSection.remove();
-
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                    // Refresh AOS setelah scroll
-                    setTimeout(() => {
-                        AOS.refreshHard();
-                    }, 300);
-                }
-            }, {
-                once: true
-            });
-        }
-
-
-        // Tampilkan semua section selain hero
-        const allSections = document.querySelectorAll("section:not(.hero)");
-        allSections.forEach(sec => sec.classList.add("show"));
-
-        // Scroll ke section pertama
-        if (allSections.length > 0) {
-            allSections[0].scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
-
-    // QUERY PARAM 'to'
-    const urlParams = new URLSearchParams(window.location.search);
-    const to = urlParams.get("to");
-    if (to) {
-        document.getElementById("invited-guest").textContent = to;
+    /* ================= AOS INIT (1x SAJA) ================= */
+    if (window.AOS && !aosInitialized) {
+        AOS.init({
+            duration: 800,
+            once: false,
+            easing: "ease-out-cubic"
+        });
+        aosInitialized = true;
     }
 
-    // FLOATING BUTTON UNTUK PLAY/PAUSE MUSIK
-    soundToggleButton.addEventListener("click", function () {
-        if (audioPlayer.paused) {
-            audioPlayer.play();
+    /* ================= ELEMENTS ================= */
+    const openBtn = document.getElementById("open-invitation-btn");
+    const audio = document.getElementById("bg-music");
+    const soundBtn = document.getElementById("music-btn");
+    const musicIcon = document.getElementById("music-icon");
+
+    /* ================= OPEN INVITATION ================= */
+    openBtn?.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Play music
+        if (audio) {
+            audio.volume = 1;
+            audio.play().catch(() => {});
+        }
+
+        if (musicIcon) musicIcon.className = "fa fa-volume-off";
+
+        openInvitation();
+    });
+
+    /* ================= MUSIC TOGGLE ================= */
+    soundBtn?.addEventListener("click", () => {
+        if (!audio) return;
+
+        if (audio.paused) {
+            audio.play();
             musicIcon.className = "fa fa-volume-off";
         } else {
-            audioPlayer.pause();
+            audio.pause();
             musicIcon.className = "fa fa-volume-up";
         }
     });
 
-    AOS.init();
-
-    // Slider with thumbnail
-    document.querySelectorAll('.thumb').forEach(el => {
-        el.onclick = () => {
-            document.getElementById('mainPreview').src = el.src;
-        };
-    });
-
-});
-
-(function () {
-    const lazyImages = [].slice.call(document.querySelectorAll('.lazy'));
-    const lazySources = [].slice.call(document.querySelectorAll('source[data-srcset]'));
-
-    if ('IntersectionObserver' in window) {
-        const config = {
-            root: null,
-            rootMargin: '200px',
-            threshold: 0.01
-        };
-        const onIntersection = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // handle <img>
-                    if (entry.target.tagName.toLowerCase() === 'img') {
-                        const img = entry.target;
-                        const src = img.getAttribute('data-src');
-                        if (src) {
-                            img.src = src;
-                            img.removeAttribute('data-src');
-                        }
-                        // handle srcset on picture > source earlier
-                    }
-                    // handle <source> elements
-                    if (entry.target.tagName.toLowerCase() === 'source') {
-                        const source = entry.target;
-                        const srcset = source.getAttribute('data-srcset');
-                        if (srcset) {
-                            source.setAttribute('srcset', srcset);
-                            source.removeAttribute('data-srcset');
-                        }
-                    }
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(onIntersection, config);
-        lazyImages.forEach(img => observer.observe(img));
-        lazySources.forEach(source => observer.observe(source));
-    } else {
-        // fallback: load all
-        lazySources.forEach(s => {
-            s.srcset = s.getAttribute('data-srcset') || '';
-        });
-        lazyImages.forEach(i => {
-            i.src = i.getAttribute('data-src') || i.src;
-        });
-    }
-})();
-
-// ==========================
-// Initialize AOS & GSAP scroll animations
-// ==========================
-document.addEventListener('DOMContentLoaded', function () {
-    if (window.AOS) AOS.init({
-        duration: 800,
-        once: false,
-        easing: 'ease-out-cubic'
-    });
-
-    if (window.gsap && window.ScrollTrigger) {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from('.grid-img', {
-            scrollTrigger: {
-                trigger: '.grid-autofit',
-                start: 'top bottom-=100'
-            },
-            y: 24,
-            opacity: 0,
-            duration: 0.7,
-            stagger: 0.08,
-            ease: 'power3.out'
-        });
-
-        gsap.from('.masonry-item', {
-            scrollTrigger: {
-                trigger: '.masonry',
-                start: 'top bottom-=120'
-            },
-            y: 28,
-            opacity: 0,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: 'power3.out'
-        });
-
-        gsap.from('#galleryCarousel .carousel-item img', {
-            scrollTrigger: {
-                trigger: '#galleryCarousel',
-                start: 'top bottom-=100'
-            },
-            y: 20,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.15
-        });
-
-        gsap.from('.thumb', {
-            scrollTrigger: {
-                trigger: '.section-wrap',
-                start: 'top bottom-=100'
-            },
-            y: 12,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.08
-        });
+    /* ================= QUERY PARAM ================= */
+    const to = new URLSearchParams(window.location.search).get("to");
+    if (to) {
+        const guest = document.getElementById("invited-guest");
+        if (guest) guest.textContent = to;
     }
 
+    /* ================= THUMBNAIL SLIDER ================= */
+    document.querySelectorAll(".thumb").forEach(el => {
+        el.addEventListener("click", () => {
+            const main = document.getElementById("mainPreview");
+            if (main) main.src = el.src;
+        });
+    });
 
+    /* ================= LAZY LOAD ================= */
+    initLazyLoad();
 });
+
+/* =====================================================
+   OPEN INVITATION FLOW (AMAN UNTUK AOS & GSAP)
+===================================================== */
+function openInvitation() {
+    const hero = document.querySelector(".hero");
+    const target = document.getElementById("open-invitation");
+
+    hero?.classList.add("hide");
+
+    hero?.addEventListener("transitionend", () => {
+        hero.remove();
+
+        target?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        // Refresh setelah layout fix
+        setTimeout(() => {
+            if (window.AOS) AOS.refreshHard();
+            if (window.ScrollTrigger) ScrollTrigger.refresh();
+        }, 200);
+
+    }, { once: true });
+
+    document
+        .querySelectorAll("section:not(.hero)")
+        .forEach(sec => sec.classList.add("show"));
+}
+
+/* =====================================================
+   LAZY LOAD IMAGE & SOURCE
+===================================================== */
+function initLazyLoad() {
+    const lazyImages = [...document.querySelectorAll("img.lazy")];
+    const lazySources = [...document.querySelectorAll("source[data-srcset]")];
+
+    if (!("IntersectionObserver" in window)) {
+        lazyImages.forEach(img => img.src = img.dataset.src || img.src);
+        lazySources.forEach(src => src.srcset = src.dataset.srcset || "");
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            if (entry.target.tagName === "IMG") {
+                const src = entry.target.dataset.src;
+                if (src) entry.target.src = src;
+            }
+
+            if (entry.target.tagName === "SOURCE") {
+                const srcset = entry.target.dataset.srcset;
+                if (srcset) entry.target.srcset = srcset;
+            }
+
+            obs.unobserve(entry.target);
+        });
+    }, {
+        rootMargin: "200px",
+        threshold: 0.01
+    });
+
+    lazyImages.forEach(img => observer.observe(img));
+    lazySources.forEach(src => observer.observe(src));
+}
+
+/* =====================================================
+   GSAP & SCROLLTRIGGER
+===================================================== */
+function initGSAP() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".grid-img", {
+        scrollTrigger: {
+            trigger: ".grid-autofit",
+            start: "top bottom-=100"
+        },
+        y: 24,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: "power3.out"
+    });
+
+    gsap.from(".masonry-item", {
+        scrollTrigger: {
+            trigger: ".masonry",
+            start: "top bottom-=120"
+        },
+        y: 28,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out"
+    });
+
+    gsap.from("#galleryCarousel .carousel-item img", {
+        scrollTrigger: {
+            trigger: "#galleryCarousel",
+            start: "top bottom-=100"
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15
+    });
+
+    gsap.from(".thumb", {
+        scrollTrigger: {
+            trigger: ".section-wrap",
+            start: "top bottom-=100"
+        },
+        y: 12,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08
+    });
+}

@@ -46,6 +46,79 @@
     font-style: normal;
 }
 
+/* Loadin Screen */
+/* === LOADING SCREEN === */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* LOGO */
+.loader-logo {
+    width: 120px;
+    animation: zoomPulse 1.5s infinite ease-in-out;
+}
+
+/* TEXT */
+.loader-title {
+    color: var(--primer-color);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: -2rem;
+    animation: zoomPulse 1.5s infinite ease-in-out;
+}
+
+.loader-text {
+    color: #222;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* SPINNER */
+.spinner {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, .2);
+    border-top-color: var(--primer-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ANIMATION */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes zoomPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: .8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
 /*  */
 
 .text-color-primary {
@@ -290,18 +363,21 @@ section.show {
 
 
 /* Gallery */
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
     color: var(--primer-color);
 }
+
 .swiper-pagination-bullet-active {
     background-color: var(--primer-color);
 }
+
 /* GALLERY CARD */
 .gallery-card {
     position: relative;
     overflow: hidden;
     border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
     cursor: pointer;
     transition: transform .4s ease;
 }
@@ -326,11 +402,9 @@ section.show {
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.05)
-    );
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, .55),
+            rgba(0, 0, 0, .05));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -344,7 +418,7 @@ section.show {
 
 .gallery-overlay span {
     padding: 10px 22px;
-    background: rgba(255,255,255,.9);
+    background: rgba(255, 255, 255, .9);
     border-radius: 30px;
     font-weight: 600;
 }
@@ -355,7 +429,7 @@ section.show {
     position: fixed;
     z-index: 9999;
     inset: 0;
-    background: rgba(0,0,0,.85);
+    background: rgba(0, 0, 0, .85);
     backdrop-filter: blur(6px);
     align-items: center;
     justify-content: center;
@@ -379,8 +453,15 @@ section.show {
 }
 
 @keyframes zoomIn {
-    from { transform: scale(.7); opacity: 0 }
-    to { transform: scale(1); opacity: 1 }
+    from {
+        transform: scale(.7);
+        opacity: 0
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
 }
 
 /* Navigation */
@@ -472,7 +553,7 @@ section.show {
 
 @media (max-width: 576px) {
     .gallery-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .gallery-grid .gallery-img {
@@ -593,11 +674,11 @@ section.show {
 }
 
 .card-img-parallax {
-    height: 180px;
-    background-image: url('../image/galeri1.JPG');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    height: 180px !important;
+    background-image: url('../image/galeri1.JPG') !important;
+    background-attachment: fixed !important;
+    background-position: center !important;
+    background-size: cover !important;
 }
 
 .floating-icon {
@@ -626,22 +707,75 @@ section.show {
 }
 
 /* Wedding Gift */
+/* ================= OFFCANVAS ================= */
+.offcanvas.full-screen {
+    height: 100vh;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+@media (min-width: 768px) {
+    .offcanvas.full-screen {
+        height: 85vh;
+    }
+}
+
+/* ================= ATM CARD ================= */
 .atm-card {
     background: #222;
     border-radius: 20px;
-    height: 300px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
+    padding: 16px;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    max-height: 320px;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
-.atm-card:hover {
-    transform: translateY(-5px);
+@media (hover: hover) and (pointer: fine) {
+    .atm-card:hover {
+        transform: translateY(-5px);
+    }
 }
 
+/* ================= MOBILE ================= */
+@media (max-width: 575.98px) {
+    .atm-card {
+        aspect-ratio: 4 / 3;
+        min-height: 200px;
+        max-height: 260px;
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .atm-card h3 {
+        font-size: 18px;
+    }
+
+    .ls-wide {
+        letter-spacing: 2px;
+        font-size: 13px;
+    }
+
+    .chip {
+        width: 42px;
+        height: 34px;
+    }
+}
+
+/* ================= UTILITIES ================= */
 .ls-wide {
     letter-spacing: 3px;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.italic {
+    font-style: italic;
 }
 
 .chip {
@@ -651,13 +785,10 @@ section.show {
     border-radius: 8px;
 }
 
-.italic {
-    font-style: italic;
-}
-
 /* Membuat Offcanvas Bottom menjadi Full Screen */
 .offcanvas-bottom.full-screen {
-    height: 100vh !important; /* vh = viewport height */
+    height: 100vh !important;
+    /* vh = viewport height */
 }
 
 /* Opsional: Memastikan konten di dalamnya bisa di-scroll jika panjang */
@@ -665,3 +796,6 @@ section.show {
     overflow-y: auto;
 }
 
+.page-link {
+    color: var(--primer-color) !important;
+}
