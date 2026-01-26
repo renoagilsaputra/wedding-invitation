@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const audioPlayer = document.getElementById("bg-music");
     const soundToggleButton = document.getElementById("music-btn");
     const musicIcon = document.getElementById("music-icon");
+    const heroSection = document.querySelector(".hero");
 
     // TOMBOL BUKA UNDANGAN
     button.addEventListener("click", function (e) {
@@ -14,6 +15,33 @@ document.addEventListener("DOMContentLoaded", function () {
         audioPlayer.play().catch(err => console.log("Autoplay blocked:", err));
 
         musicIcon.className = "fa fa-volume-off";
+
+        // Sembunyikan hero
+        const heroSection = document.querySelector(".hero");
+        const targetSection = document.getElementById("open-invitation");
+
+        if (heroSection) {
+            heroSection.classList.add("hide");
+
+            heroSection.addEventListener("transitionend", () => {
+                heroSection.remove();
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                    // Refresh AOS setelah scroll
+                    setTimeout(() => {
+                        AOS.refreshHard();
+                    }, 300);
+                }
+            }, {
+                once: true
+            });
+        }
+
 
         // Tampilkan semua section selain hero
         const allSections = document.querySelectorAll("section:not(.hero)");
@@ -113,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
     if (window.AOS) AOS.init({
         duration: 800,
-        once: true,
+        once: false,
         easing: 'ease-out-cubic'
     });
 
