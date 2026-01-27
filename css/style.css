@@ -2,6 +2,12 @@
     --primer-color: #c1121f;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 /* Font */
 .alex-brush-regular {
     font-family: "Alex Brush", cursive;
@@ -111,10 +117,13 @@
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
         opacity: 0.7;
     }
+
     50% {
         transform: scale(1.05);
         opacity: 1;
@@ -160,6 +169,69 @@ body {
     background-image: url('../image/pattern1.jpeg');
 }
 
+
+/* Floating Navigasi */
+
+/* ===============================
+   MOBILE FLOATING NAV
+================================ */
+.mobile-nav {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    max-width: 520px;
+    height: 64px;
+
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, .18);
+    z-index: 9999;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: opacity .4s ease, transform .4s ease;
+}
+
+.mobile-nav.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(20px);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    color: #777;
+    cursor: pointer;
+}
+
+.nav-btn i {
+    font-size: 20px;
+    line-height: 1;
+    transition: transform .3s ease;
+}
+
+.nav-btn.active {
+    color: var(--primer-color, #c1121f);
+}
+
+.nav-btn.active i {
+    transform: scale(1.2);
+}
 
 /* Hero */
 .hero {
@@ -256,7 +328,7 @@ body {
 
 /* Names */
 .couple-name h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     color: #6b3e2e;
 }
 
@@ -279,22 +351,25 @@ body {
 }
 
 /* Mobile optimization */
-@media (max-width: 576px) {
+
+@media (max-width: 480px) {
     .couple-name h1 {
-        font-size: 2.6rem;
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+
+    .couple-name h1 {
+        font-size: 4rem;
     }
 
     .ampersand {
         font-size: 1.6rem;
     }
-}
 
 
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 2rem;
-        /* ukuran pas untuk HP kecil */
-    }
 
     .hero p {
         font-size: 1rem;
@@ -321,10 +396,23 @@ section.show {
     opacity: 1;
 }
 
-#music-btn {
+.floating-wrapper {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 6rem;
+    right: 1rem;
+    z-index: 9999;
+    /* Memisahkan animasi AOS */
+
+}
+
+.floating-wrapper.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.7);
+}
+
+/* Tombol */
+#music-btn {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -336,8 +424,10 @@ section.show {
     justify-content: center;
     font-size: 26px;
     cursor: pointer;
-    z-index: 9999;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    /* Penting: agar transform hover tidak konflik dengan AOS */
+    transform: translateZ(0);
     transition: transform 0.3s ease;
 }
 

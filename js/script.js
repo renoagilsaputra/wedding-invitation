@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById("bg-music");
     const soundBtn = document.getElementById("music-btn");
     const musicIcon = document.getElementById("music-icon");
+    const floatingWrapper = document.getElementById("floating-wrapper");
+    const mobileNav = document.getElementById("mobile-nav");
+    const navButtons = document.querySelectorAll(".nav-btn");
 
     /* ================= OPEN INVITATION ================= */
     openBtn?.addEventListener("click", (e) => {
@@ -51,6 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (musicIcon) musicIcon.className = "fa fa-volume-off";
+
+        floatingWrapper.classList.remove("hidden");
+        mobileNav.classList.remove("hidden");
 
         openInvitation();
     });
@@ -82,6 +88,52 @@ document.addEventListener("DOMContentLoaded", () => {
             if (main) main.src = el.src;
         });
     });
+
+    
+    /* ===============================
+       SCROLL KE SECTION
+    ================================ */
+    navButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = document.querySelector(btn.dataset.target);
+            if (!target) return;
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+
+    /* ===============================
+       ACTIVE STATE SAAT SCROLL
+    ================================ */
+    const sections = [...navButtons].map(btn =>
+        document.querySelector(btn.dataset.target)
+    );
+
+    window.addEventListener("scroll", () => {
+        let current = null;
+
+        sections.forEach(section => {
+            if (!section) return;
+            const offset = section.offsetTop - 150;
+            if (window.scrollY >= offset) {
+                current = section;
+            }
+        });
+
+        navButtons.forEach(btn => {
+            btn.classList.toggle(
+                "active",
+                current && btn.dataset.target === getSelector(current)
+            );
+        });
+    });
+
+    function getSelector(el) {
+        return el.id ? `#${el.id}` : `.${el.classList[0]}`;
+    }
 
     /* ================= LAZY LOAD ================= */
     initLazyLoad();

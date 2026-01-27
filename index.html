@@ -52,9 +52,46 @@
     </div>
 
     <!-- Floating Button -->
-    <button id="music-btn">
-        <i id="music-icon" class="fa fa-play"></i>
-    </button>
+    <div class="floating-wrapper hidden" id="floating-wrapper">
+        <button id="music-btn">
+            <i id="music-icon" class="fa fa-play"></i>
+        </button>
+
+    </div>
+
+    <!-- MOBILE FLOATING NAV -->
+    <nav id="mobile-nav" class="mobile-nav hidden">
+        <button class="nav-btn active" data-target="#open-invitation">
+            <i class="fa fa-home"></i>
+            <span>Home</span>
+        </button>
+
+        <button class="nav-btn" data-target="#bride-groom">
+            <i class="fa fa-heart"></i>
+            <span>Couple</span>
+        </button>
+
+        <button class="nav-btn" data-target="#gallery">
+            <i class="fa fa-picture-o"></i>
+            <span>Gallery</span>
+        </button>
+
+        <button class="nav-btn" data-target="#time-place">
+            <i class="fa fa-calendar"></i>
+            <span>Event</span>
+        </button>
+
+         <button class="nav-btn" data-target="#wedding-gift">
+            <i class="fa fa-gift"></i>
+            <span>Gift</span>
+        </button>
+
+        <button class="nav-btn" data-target="#pray-greeting">
+            <i class="fa fa-comment"></i>
+            <span>Doa</span>
+        </button>
+    </nav>
+
 
     <!-- HERO SECTION -->
     <section class="hero d-flex align-items-center min-vh-100 position-relative">
