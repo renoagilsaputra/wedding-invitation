@@ -43,6 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileNav = document.getElementById("mobile-nav");
     const navButtons = document.querySelectorAll(".nav-btn");
 
+    const navToggle = document.getElementById("nav-toggle");
+
+    navToggle.addEventListener("click", () => {
+        // mobileNav.classList.toggle("minimized");
+        mobileNav.classList.toggle("minimized");
+        navToggle.querySelector("i")?.classList.toggle("fa-chevron-up");
+        navToggle.querySelector("i")?.classList.toggle("fa-times");
+    });
+    
+
     /* ================= OPEN INVITATION ================= */
     openBtn?.addEventListener("click", (e) => {
         e.preventDefault();
