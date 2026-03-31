@@ -312,7 +312,7 @@ body::before {
     background-size: cover;
     z-index: 0;
     opacity: 0.1 !important;
-    animation: candiDrift 20s ease-in-out infinite, candiBreath 8s ease-in-out infinite;
+    animation: candiZoom 20s ease-in-out infinite;
 }
 
 .bg-side {
@@ -320,47 +320,44 @@ body::before {
     background-size: cover;
     background-position: center bottom;
     z-index: 0;
-    animation: sideFloat 18s ease-in-out infinite;
+    animation: sideZoom 16s ease-in-out infinite;
 }
 
-@keyframes sideFloat {
+@keyframes sideZoom {
     0%, 100% {
-        transform: translateX(0) scale(1);
-        opacity: 0.93;
-    }
-    50% {
-        transform: translateX(18px) scale(1.02);
-        opacity: 0.99;
-    }
-}
-
-@keyframes candiDrift {
-    0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.10;
+        transform: scale(1);
+        opacity: 0.92;
     }
     25% {
-        transform: translateY(-8px) scale(1.01);
-        opacity: 0.12;
+        transform: scale(1.03);
+        opacity: 0.97;
     }
     50% {
-        transform: translateY(0) scale(1);
-        opacity: 0.10;
+        transform: scale(1.06);
+        opacity: 1;
     }
     75% {
-        transform: translateY(8px) scale(1.01);
-        opacity: 0.12;
+        transform: scale(1.03);
+        opacity: 0.97;
     }
 }
 
-@keyframes candiBreath {
+@keyframes candiZoom {
     0%, 100% {
         transform: scale(1);
         opacity: 0.10;
     }
+    25% {
+        transform: scale(0.98);
+        opacity: 0.08;
+    }
     50% {
-        transform: scale(1.015);
-        opacity: 0.14;
+        transform: scale(1.02);
+        opacity: 0.12;
+    }
+    75% {
+        transform: scale(1);
+        opacity: 0.10;
     }
 }
 
