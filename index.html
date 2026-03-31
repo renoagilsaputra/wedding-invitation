@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
@@ -7,66 +7,57 @@
     <title>The Wedding of Reno & Asyifa</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- ================= SEO BASIC ================= -->
+    <!-- SEO -->
     <meta name="description"
         content="Undangan pernikahan Reno & Asyifa. Dengan penuh kebahagiaan kami mengundang Anda untuk hadir di hari istimewa kami pada 1 Juni 2026.">
     <meta name="keywords"
         content="undangan pernikahan, wedding invitation, Reno dan Asyifa, undangan digital, pernikahan 2026">
     <meta name="author" content="Reno & Asyifa">
 
-    <!-- ================= OPEN GRAPH ================= -->
+    <!-- Open Graph -->
     <meta property="og:title" content="The Wedding of Reno & Asyifa">
     <meta property="og:description"
         content="Kami mengundang Anda untuk hadir di pernikahan Reno & Asyifa pada 1 Juni 2026.">
     <meta property="og:image" content="https://renoagilsaputra.github.io/wedding-invitation/image/galeri2.JPG">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://renoagilsaputra.github.io/wedding-invitation">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Wedding Reno & Asyifa">
     <meta property="og:locale" content="id_ID">
 
-    <!-- ================= TWITTER CARD ================= -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Wedding of Reno & Asyifa">
     <meta name="twitter:description" content="Undangan pernikahan Reno & Asyifa - 1 Juni 2026.">
     <meta name="twitter:image" content="https://renoagilsaputra.github.io/wedding-invitation/image/galeri2.JPG">
 
-    <!-- ================= WHATSAPP SPECIFIC (BIAR CAKEP) ================= -->
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Font -->
+    <!-- Google Fonts (combined) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Bree+Serif&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+NO:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Stardos+Stencil:wght@400;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- AOS (Simple scroll animations) -->
+    <!-- AOS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+    <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <!-- CSS Dynamic Section Hide -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-
-
 </head>
 
 <body>
@@ -79,69 +70,51 @@
         <div class="loader-text">LOADING...</div>
     </div>
 
-    <!-- Floating Button -->
+    <!-- Floating Music Button -->
     <div class="floating-wrapper hidden" id="floating-wrapper">
         <button id="music-btn">
             <i id="music-icon" class="fa fa-play"></i>
         </button>
-
     </div>
-
-
 
     <!-- MOBILE FLOATING NAV -->
     <nav id="mobile-nav" class="mobile-nav hidden">
-
         <button id="nav-toggle" class="nav-toggle-btn">
             <i class="fa fa-chevron-down"></i>
         </button>
-
         <button class="nav-btn active" data-target="#open-invitation">
             <i class="fa fa-home"></i>
             <span>Home</span>
         </button>
-
         <button class="nav-btn" data-target="#bride-groom">
             <i class="fa fa-heart"></i>
             <span>Couple</span>
         </button>
-
         <button class="nav-btn" data-target="#gallery">
             <i class="fa fa-picture-o"></i>
             <span>Gallery</span>
         </button>
-
         <button class="nav-btn" data-target="#time-place">
             <i class="fa fa-calendar"></i>
             <span>Event</span>
         </button>
-
         <button class="nav-btn" data-target="#wedding-gift">
             <i class="fa fa-gift"></i>
             <span>Gift</span>
         </button>
-
         <button class="nav-btn" data-target="#pray-greeting">
             <i class="fa fa-comment"></i>
             <span>Pray</span>
         </button>
     </nav>
 
-
     <!-- HERO SECTION -->
     <section class="hero d-flex align-items-center min-vh-100 position-relative">
-        <!-- Background Image -->
         <div class="hero-bg bg-candi"></div>
         <div class="hero-bg bg-side" data-aos="zoom-in" data-aos-delay="400"></div>
-
-        <!-- Overlay -->
         <div class="hero-overlay"></div>
 
-
-
         <div class="container text-center position-relative z-1">
-
-            <!-- Title -->
             <div class="wedding-title-wrapper mb-4">
                 <div class="text-uppercase wedding-title" data-aos="zoom-out" data-aos-delay="200">
                     <div>The</div>
@@ -150,99 +123,88 @@
                 </div>
             </div>
 
-            <!-- Couple Name -->
             <div class="couple-name mb-4">
                 <h1 class="allura-regular mb-1 text-color-primary fw-bold" data-aos="fade-right" data-aos-delay="400">
                     Reno</h1>
                 <h2 class="allura-regular ampersand fw-bold" data-aos="fade-in" data-aos-delay="600">&</h2>
-                <h1 class="allura-regular mt-1 text-color-primary fw-bold
-                " data-aos="fade-left" data-aos-delay="800">Asyifa</h1>
+                <h1 class="allura-regular mt-1 text-color-primary fw-bold" data-aos="fade-left" data-aos-delay="800">
+                    Asyifa</h1>
             </div>
 
             <div data-aos="fade-in" data-aos-delay="1000">
-                <!-- Greeting -->
                 <p class="recipient-text mb-4">
                     Kepada Yth.<br>
                     Bapak / Ibu / Saudara/i
                 </p>
                 <div class="guest-box mb-4 mx-auto" data-aos="fade-in">
                     <span class="guest-label">Nama Tamu</span>
-                    <div class="guest-name text-color-primary" id="invited-guest">
-                        Nama Undangan
-                    </div>
+                    <div class="guest-name text-color-primary" id="invited-guest">Nama Undangan</div>
                 </div>
-
-                <!-- Button -->
                 <a href="#" id="open-invitation-btn" class="btn btn-primary btn-open px-4 py-2">
                     <i class="fa fa-envelope me-2"></i> Buka Undangan
                 </a>
             </div>
-
         </div>
     </section>
 
-
-    <!-- SECTION Open Invitataion -->
+    <!-- SECTION Open Invitation -->
     <section id="open-invitation" class="bg-light-transparant">
-
-
         <div class="container-fluid">
             <img src="image/divider.svg" alt="divider" class="img-fluid">
-            <img src="image/ra.png" class="img-fluid d-block mx-auto animate__animated  animate__zoomIn"
-                style="width: 160px; margin-bottom: -4rem !important;" alt="open-invitation">
+            <img src="image/ra.png" class="img-fluid d-block mx-auto animate__animated animate__zoomIn"
+                style="width: 160px; margin-bottom: -4rem !important;" alt="logo">
             <div class="text-center mb-5">
                 <h3 class="libre-baskerville fw-normal text-color-primary animate__animated animate__zoomIn">Wedding
                     Invitation</h3>
             </div>
 
-            <img src="image/galeri2.JPG" style="width: 180px; margin-bottom: 2rem;"
-                class="img-fluid d-block mx-auto img-border-premium animate__animated animate__zoomIn"
-                alt="open-invitation-image">
 
+            <div class="photo-frame animate__animated animate__zoomIn d-block mx-auto"
+                style="width: 200px; margin: 0 auto 2rem auto;">
+                <img src="image/galeri2.JPG" class="img-fluid" alt="opening couple">
+            </div>
             <img src="image/scroll.gif" alt="Swipe" class="swipe-gif mt-5 mb-5">
-
         </div>
         <img src="image/divider.svg" alt="divider" class="img-fluid animate__animated animate__flipInX">
     </section>
 
-
-
-    <!-- Section Bride & Groom -->
+    <!-- SECTION Bride & Groom -->
     <section id="bride-groom" class="bg-light-transparant">
         <div class="container">
             <div class="text-center">
                 <h3 class="libre-baskerville fw-normal text-color-primary" data-aos="fade-in" data-aos-delay="200">Bride
                     & Groom</h3>
                 <p class="stardos-stencil-regular" data-aos="fade-in" data-aos-delay="400">Perjalanan pernikahan dimulai
-                    dengan janji, dilanjutkan dengan
-                    ibadah,
-                    dan diakhiri dengan ridho Allah
-                    SWT. Kami bermaksud memulai perjalanan tersebut dengan awal yang bahagia</p>
+                    dengan janji, dilanjutkan dengan ibadah, dan diakhiri dengan ridho Allah SWT.
+                    Kami bermaksud memulai perjalanan tersebut dengan awal yang bahagia</p>
+
                 <div class="male">
-                    <img src="image/male.JPG" style="width: 200px;" class="img-fluid d-block mx-auto img-border-premium"
-                        alt="male" data-aos="fade-up" data-aos-delay="600">
+                    <div class="photo-frame" data-aos="fade-up" data-aos-delay="600">
+                        <img src="image/male.JPG" style="width: 200px;" class="img-fluid d-block" alt="Reno">
+                    </div>
                     <h4 class="mt-3 allura-regular fw-semibold" style="font-size: 2rem;" data-aos="fade-right"
-                        data-aos-delay="800">Reno Agil Saputra, S. Kom</h4>
-                    <p class="stardos-stencil-regular" data-aos="fade-left" data-aos-delay="1000">Putra terakhir dari
-                        bapak H. Achmad Buchori Katiwan
-                        & Ibu Hj. Turinah (Almh)</p>
+                        data-aos-delay="800">
+                        Reno Agil Saputra, S. Kom
+                    </h4>
+                    <p class="stardos-stencil-regular" data-aos="fade-left" data-aos-delay="1000">
+                        Putra terakhir dari Bapak H. Achmad Buchori Katiwan & Ibu Hj. Turinah (Almh)
+                    </p>
                 </div>
 
                 <h1 class="libre-baskerville text-color-primary" style="font-size: 4rem; text-shadow: 5px 5px 5px #ccc;"
-                    data-aos="fade-up" data-aos-delay="1200">&
-                </h1>
+                    data-aos="fade-up" data-aos-delay="1200">&</h1>
 
                 <div class="female">
-                    <img src="image/female.JPG" style="width: 200px;"
-                        class="img-fluid d-block mx-auto img-border-premium" alt="female" data-aos="fade-up"
-                        data-aos-delay="1400">
+                    <div class="photo-frame" data-aos="fade-up" data-aos-delay="1400">
+                        <img src="image/female.JPG" style="width: 200px;" class="img-fluid d-block" alt="Asyifa">
+                    </div>
                     <h4 class="mt-3 allura-regular fw-semibold" style="font-size: 1.6rem;" data-aos="fade-right"
-                        data-aos-delay="1600">Asyifa Ajibarata Putri, A.Md.
-                        Keb
+                        data-aos-delay="1600">
+                        Asyifa Ajibarata Putri, A.Md. Keb
                     </h4>
-                    <p class="stardos-stencil-regular" data-aos="fade-left" data-aos-delay="1800">Putri Pertama dari
-                        Bapak Sugeng
-                        & Ibu Widiarti (Windi)</p>
+                    <p class="stardos-stencil-regular" data-aos="fade-left" data-aos-delay="1800">
+                        Putri Pertama dari Bapak Sugeng & Ibu Widiarti (Windi)
+                    </p>
                 </div>
             </div>
             <img src="image/divider.svg" alt="divider" class="img-fluid">
@@ -251,220 +213,195 @@
 
     <!-- SECTION Pray -->
     <section id="pray">
-        <div class="container py-5" data-aos="zoom-in" data-aos-delay="2000">
+        <div class="container py-5" data-aos="zoom-in" data-aos-delay="200">
             <div class="p-5">
                 <img src="image/gunungan.png" class="img-fluid d-block mx-auto"
                     style="width: 60px; margin-top: -4rem !important; margin-bottom: 1rem;" alt="gunungan">
-                <p class="bree-serif-regular text-color-primary" style="text-align: center;">“Dan di antara tanda-tanda
-                    kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung
-                    dan merasa tenteram kepadanya, dan Dia menjadikan diantaramu rasa kasih sayang (mawaddah) dan rahmat
-                    (rahmah). Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
-                    berpikir.”</p>
+                <p class="bree-serif-regular text-color-primary text-center">
+                    "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu
+                    sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan diantaramu rasa
+                    kasih sayang (mawaddah) dan rahmat (rahmah). Sesungguhnya pada yang demikian itu benar-benar
+                    terdapat tanda-tanda bagi kaum yang berpikir."
+                </p>
                 <h2 class="text-center bree-serif-regular text-color-primary">( QS. Ar Rum : 21 )</h2>
             </div>
         </div>
         <img src="image/divider.svg" alt="divider" class="img-fluid">
     </section>
 
-
-    <!-- SECTION GALERI -->
+    <!-- SECTION Gallery -->
     <section id="gallery" style="margin-top: 6rem !important;">
         <div class="container-fluid py-2">
             <h3 class="libre-baskerville fw-normal text-color-primary text-center">Galeri</h3>
             <p class="stardos-stencil-regular text-center mb-4">Foto-foto kenangan kami</p>
-            <div class="swiper gallery-swiper" data-aos="fade-in" data-aos-delay="1200">
-                <div class="swiper-wrapper">
 
+            <div class="swiper gallery-swiper" data-aos="fade-in" data-aos-delay="200">
+                <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri1.JPG">
-                            <img src="image/galeri1.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri1.JPG" class="gallery-img" alt="Galeri 1">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri2.JPG">
-                            <img src="image/galeri2.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri2.JPG" class="gallery-img" alt="Galeri 2">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri3.JPG">
-                            <img src="image/galeri3.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri3.JPG" class="gallery-img" alt="Galeri 3">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri4.JPG">
-                            <img src="image/galeri4.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri4.JPG" class="gallery-img" alt="Galeri 4">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri5.JPG">
-                            <img src="image/galeri5.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri5.JPG" class="gallery-img" alt="Galeri 5">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri6.JPG">
-                            <img src="image/galeri6.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri6.JPG" class="gallery-img" alt="Galeri 6">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri7.JPG">
-                            <img src="image/galeri7.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri7.JPG" class="gallery-img" alt="Galeri 7">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri8.JPG">
-                            <img src="image/galeri8.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri8.JPG" class="gallery-img" alt="Galeri 8">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri9.JPG">
-                            <img src="image/galeri9.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri9.JPG" class="gallery-img" alt="Galeri 9">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                     <div class="swiper-slide">
                         <div class="gallery-card zoom-trigger" data-src="image/galeri10.JPG">
-                            <img src="image/galeri10.JPG" class="gallery-img" alt="">
+                            <img src="image/galeri10.JPG" class="gallery-img" alt="Galeri 10">
                             <div class="gallery-overlay"><span>Lihat</span></div>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
             </div>
 
             <div class="row mt-5 gallery-grid">
-
-                <div class="col" data-aos="flip-left" data-aos-delay="1400">
+                <div class="col" data-aos="flip-left" data-aos-delay="100">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri1.JPG">
-                        <img src="image/galeri1.JPG" class="gallery-img">
+                        <img src="image/galeri1.JPG" class="gallery-img" alt="Galeri 1">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-                <div class="col" data-aos="flip-left" data-aos-delay="1500">
+                <div class="col" data-aos="flip-left" data-aos-delay="150">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri2.JPG">
-                        <img src="image/galeri2.JPG" class="gallery-img">
+                        <img src="image/galeri2.JPG" class="gallery-img" alt="Galeri 2">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-                <div class="col" data-aos="flip-left" data-aos-delay="1600">
+                <div class="col" data-aos="flip-left" data-aos-delay="200">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri3.JPG">
-                        <img src="image/galeri3.JPG" class="gallery-img">
+                        <img src="image/galeri3.JPG" class="gallery-img" alt="Galeri 3">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
-                <div class="col" data-aos="flip-left" data-aos-delay="1700">
+                <div class="col" data-aos="flip-left" data-aos-delay="250">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri4.JPG">
-                        <img src="image/galeri4.JPG" class="gallery-img">
+                        <img src="image/galeri4.JPG" class="gallery-img" alt="Galeri 4">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
-                <div class="col" data-aos="flip-left" data-aos-delay="1800">
+                <div class="col" data-aos="flip-left" data-aos-delay="300">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri5.JPG">
-                        <img src="image/galeri5.JPG" class="gallery-img">
+                        <img src="image/galeri5.JPG" class="gallery-img" alt="Galeri 5">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
-                <div class="col" data-aos="flip-left" data-aos-delay="1900">
+                <div class="col" data-aos="flip-left" data-aos-delay="350">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri6.JPG">
-                        <img src="image/galeri6.JPG" class="gallery-img">
+                        <img src="image/galeri6.JPG" class="gallery-img" alt="Galeri 6">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
-                <div class="col" data-aos="flip-left" data-aos-delay="2000">
+                <div class="col" data-aos="flip-left" data-aos-delay="400">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri7.JPG">
-                        <img src="image/galeri7.JPG" class="gallery-img">
+                        <img src="image/galeri7.JPG" class="gallery-img" alt="Galeri 7">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
-                <div class="col" data-aos="flip-left" data-aos-delay="2100">
+                <div class="col" data-aos="flip-left" data-aos-delay="450">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri8.JPG">
-                        <img src="image/galeri8.JPG" class="gallery-img">
+                        <img src="image/galeri8.JPG" class="gallery-img" alt="Galeri 8">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
-                <div class="col" data-aos="flip-left" data-aos-delay="2200">
+                <div class="col" data-aos="flip-left" data-aos-delay="500">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri9.JPG">
-                        <img src="image/galeri9.JPG" class="gallery-img">
+                        <img src="image/galeri9.JPG" class="gallery-img" alt="Galeri 9">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
-                <div class="col" data-aos="flip-left" data-aos-delay="2300">
+                <div class="col" data-aos="flip-left" data-aos-delay="550">
                     <div class="gallery-card zoom-trigger" data-src="image/galeri10.JPG">
-                        <img src="image/galeri10.JPG" class="gallery-img">
+                        <img src="image/galeri10.JPG" class="gallery-img" alt="Galeri 10">
                         <div class="gallery-overlay"><span>Lihat</span></div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- MODAL -->
+            <!-- Modal -->
             <div id="imageModal" class="image-modal">
                 <span class="modal-close">&times;</span>
-                <img id="modalImage">
+                <img id="modalImage" alt="foto">
             </div>
-
-
         </div>
     </section>
 
-    <section class="mt-5">
-        <img src="image/divider.svg" alt="divider" class="img-fluid">
-    </section>
+    <div class="mt-5 section-divider">
+        <div class="container p-5">
+            <img src="image/divider.svg" alt="divider" class="img-fluid">
+        </div>
+    </div>
 
-    <!-- OUR STORY SECTION -->
+    <!-- OUR STORY -->
     <section id="our-story" class="py-5">
         <div class="container-fluid">
             <div class="text-center mb-5">
                 <h3 class="fw-semibold libre-baskerville text-color-primary" data-aos="fade-in">Our Story</h3>
-                <p class="text-muted stardos-stencil-regular" data-aos="fade-in">
-                    Perjalanan cinta yang membawa kami ke hari bahagia
-                </p>
+                <p class="text-muted stardos-stencil-regular" data-aos="fade-in">Perjalanan cinta yang membawa kami ke
+                    hari bahagia</p>
             </div>
 
             <div class="story-stepper">
-
-                <!-- Step 1 -->
                 <div class="story-step" data-aos="fade-up">
                     <div class="story-icon">
                         <img src="image/icon/heart.svg" class="icon-img-svg" alt="heart">
                     </div>
                     <img src="image/galeri1.JPG" class="story-img" alt="First Meet">
                     <div class="step-content">
-
                         <h6>First Meet</h6>
                         <span>30 November 2024</span>
                         <p>Kami pertama kali bertemu dan mulai saling mengenal.</p>
                     </div>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="story-step" data-aos="fade-up" data-aos-delay="150">
                     <div class="story-icon">
                         <img src="image/icon/hands-heart.svg" class="icon-img-svg" alt="relationship">
@@ -477,7 +414,6 @@
                     </div>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="story-step" data-aos="fade-up" data-aos-delay="300">
                     <div class="story-icon">
                         <img src="image/icon/ring.svg" class="icon-img-svg" alt="engagement">
@@ -490,7 +426,6 @@
                     </div>
                 </div>
 
-                <!-- Step 4 -->
                 <div class="story-step" data-aos="fade-up" data-aos-delay="450">
                     <div class="story-icon">
                         <img src="image/icon/rings-wedding.svg" class="icon-img-svg" alt="wedding">
@@ -502,128 +437,169 @@
                         <p>Hari bahagia yang kami nantikan bersama.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-
-    <!-- Section Countdown -->
+    <!-- SECTION Countdown -->
     <section id="countdown" data-aos="flip-up">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-lg-12 col-md-12 col-12">
+                <div class="col-12">
                     <div class="overlay-card p-4 p-md-5 text-center">
                         <h4 class="mb-2 fw-bold libre-baskerville text-color-primary">Menuju Hari Bahagia</h4>
                         <h2 class="mb-4 fw-bold libre-baskerville">1 Juni 2026</h2>
-
-
                         <div class="row g-3" id="countdown-wrapper">
-                            <div class="col-md-3 col-3">
+                            <div class="col-3">
                                 <div class="time-box">
                                     <div id="days" class="time-number">0</div>
                                     <div class="time-label">Hari</div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-3">
+                            <div class="col-3">
                                 <div class="time-box">
                                     <div id="hours" class="time-number">0</div>
                                     <div class="time-label">Jam</div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-3">
+                            <div class="col-3">
                                 <div class="time-box">
                                     <div id="minutes" class="time-number">0</div>
                                     <div class="time-label">Menit</div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-3">
+                            <div class="col-3">
                                 <div class="time-box">
                                     <div id="seconds" class="time-number">0</div>
                                     <div class="time-label">Detik</div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Time & Place -->
-    <section id="time-place" class="mt-5">
+    <!-- SECTION Time & Place -->
+    <section id="time-place" class="mt-5 py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="text-center mb-5" data-aos="fade-up">
+                        <h2 class="display-5 fw-bold libre-baskerville text-color-primary">Waktu & Tempat</h2>
+                        <p class="lead text-muted">Acara Pernikahan Kami</p>
+                    </div>
 
-                        <!-- PARALLAX IMAGE -->
-                        <div class="card-img-parallax">
-                            <div class="parallax-bg"></div>
-                        </div>
-
-                        <!-- FLOATING ICON -->
-                        <div class="floating-icon">
-                            <i class="fa fa-bookmark"></i>
-                        </div>
-
-                        <!-- CONTENT -->
-                        <div class="card-body">
-                            <h5 class="card-title libre-baskerville">Akad & Resepsi</h5>
-
-                            <table class="table">
-                                <tr>
-                                    <th><i class="fa fa-calendar"></i></th>
-                                    <td>1 Juni 2026</td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-clock-o"></i></th>
-                                    <td>09.00 WIB - Selesai</td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-map-o"></i></th>
-                                    <td>Kediaman Mempelai Wanita</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        Jalan Bangsadrana RT 3 RW 2, Desa Ajibarang Kulon, Kecamatan Ajibarang
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <div class="d-grid">
-                                <a href="https://maps.app.goo.gl/2ujkx8sWnsF5usoo7" target="_blank"
-                                    class="btn btn-primary">
-                                    <i class="fa fa-map-marker"></i> Google Maps
+                    <div class="row g-4">
+                        <!-- Akad & Resepsi -->
+                        <div class="col-12" data-aos="fade-up">
+                            <div class="event-card">
+                                <div class="event-card__icon">
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                                <h4 class="event-card__title libre-baskerville">Akad Nikah & Resepsi</h4>
+                                <div class="event-card__info">
+                                    <div class="event-info-row">
+                                        <i class="fa fa-calendar"></i>
+                                        <span>Senin, 1 Juni 2026</span>
+                                    </div>
+                                    <div class="event-info-row">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>09.00 WIB — Selesai</span>
+                                    </div>
+                                    <div class="event-info-row">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span>
+                                            <strong>Kediaman Mempelai Wanita</strong><br>
+                                            Jalan Bangsadrana RT 3 RW 2,<br>
+                                            Desa Ajibarang Kulon, Kec. Ajibarang
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="https://maps.app.goo.gl/2ujkx8sWnsF5usoo7" target="_blank" class="btn-maps">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Buka di Google Maps</span>
                                 </a>
                             </div>
                         </div>
 
+                        <!-- Tasyakuran -->
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+                            <div class="event-card">
+                                <div class="event-card__icon">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <h4 class="event-card__title libre-baskerville">Tasyakuran</h4>
+                                <div class="event-card__info">
+                                    <div class="event-info-row">
+                                        <i class="fa fa-calendar"></i>
+                                        <span>30 – 31 Mei 2026</span>
+                                    </div>
+                                    <div class="event-info-row">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span>
+                                            <strong>Kediaman Mempelai Wanita</strong><br>
+                                            Jalan Bangsadrana RT 3 RW 2,<br>
+                                            Desa Ajibarang Kulon, Kec. Ajibarang
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="https://maps.app.goo.gl/2ujkx8sWnsF5usoo7" target="_blank" class="btn-maps">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Buka di Google Maps</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Tasyakuran Ngunduh Mantu -->
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                            <div class="event-card">
+                                <div class="event-card__icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <h4 class="event-card__title libre-baskerville">Tasyakuran Ngunduh Mantu</h4>
+                                <div class="event-card__info">
+                                    <div class="event-info-row">
+                                        <i class="fa fa-calendar"></i>
+                                        <span>4 – 6 Juni 2026</span>
+                                    </div>
+                                    <div class="event-info-row">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span>
+                                            <strong>Kediaman Mempelai Wanita</strong><br>
+                                            Jalan Penatusan RT 4 RW 3,<br>
+                                            Desa Ajibarang Kulon, Kec. Ajibarang
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="https://maps.app.goo.gl/RUY1acKJnZpXJwv19" target="_blank" class="btn-maps">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Buka di Google Maps</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="mt-5">
-        <img src="image/divider.svg" alt="divider" class="img-fluid">
-    </section>
+    <div class="mt-5 section-divider">
+        <div class="container p-5">
+            <img src="image/divider.svg" alt="divider" class="img-fluid">
+        </div>
+    </div>
 
-    <!-- Section Wedding Gift -->
+    <!-- SECTION Wedding Gift -->
     <section id="wedding-gift" class="mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <h1 class="text-center mb-4 libre-baskerville text-color-primary">Wedding Gift</h1>
                     <p class="text-center px-md-5 stardos-stencil-regular">Doa restu anda merupakan karunia yang sangat
-                        berarti bagi kami. Namun
-                        jika memberi adalah ungkapan tanda kasih anda, kami dengan senang hati menerima dan tentunya
-                        semakin melengkapi kebahagiaan kami.</p>
-
+                        berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih anda, kami dengan senang
+                        hati menerima dan tentunya semakin melengkapi kebahagiaan kami.</p>
                     <div class="text-center">
                         <button class="btn btn-primary px-4 py-2" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
@@ -634,12 +610,12 @@
                     <div class="offcanvas offcanvas-bottom full-screen" tabindex="-1" id="offcanvasBottom"
                         aria-labelledby="offcanvasBottomLabel">
                         <div class="offcanvas-header border-bottom">
-                            <h5 class="offcanvas-title" id="offcanvasBottomLabel"><i class="fa fa-gift"></i> Wedding
-                                Gift</h5>
+                            <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+                                <i class="fa fa-gift"></i> Wedding Gift
+                            </h5>
                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                                 aria-label="Close"></button>
                         </div>
-
                         <div class="offcanvas-body bg-light">
                             <div class="container py-3">
                                 <div class="row justify-content-center">
@@ -666,11 +642,13 @@
                                                     <p class="small opacity-75 mb-0">Nama Pemilik</p>
                                                     <p class="fw-bold mb-0 text-uppercase">Reno Agil Saputra</p>
                                                 </div>
-                                                <img src="image/bca.svg" height="35">
+                                                <img src="image/bca.svg" height="35" alt="BCA">
                                             </div>
                                         </div>
                                         <div id="copyAlert1" class="alert alert-success d-none py-2 text-center mb-5"
-                                            role="alert">Nomor BCA berhasil disalin!</div>
+                                            role="alert">
+                                            Nomor BCA berhasil disalin!
+                                        </div>
 
                                         <div class="atm-card p-4 text-white card-bni mb-2">
                                             <div class="d-flex justify-content-between align-items-center mb-4">
@@ -693,11 +671,13 @@
                                                     <p class="small opacity-75 mb-0">Nama Pemilik</p>
                                                     <p class="fw-bold mb-0 text-uppercase">Asyifa Ajibarata P</p>
                                                 </div>
-                                                <img src="image/bni.svg" height="35">
+                                                <img src="image/bni.svg" height="35" alt="BNI">
                                             </div>
                                         </div>
                                         <div id="copyAlert2" class="alert alert-success d-none py-2 text-center mb-5"
-                                            role="alert">Nomor BNI berhasil disalin!</div>
+                                            role="alert">
+                                            Nomor BNI berhasil disalin!
+                                        </div>
 
                                     </div>
                                 </div>
@@ -709,32 +689,32 @@
         </div>
     </section>
 
-    <section class="mt-5">
-        <img src="image/divider.svg" alt="divider" class="img-fluid">
-    </section>
+    <div class="mt-5 section-divider">
+        <div class="container p-5">
+            <img src="image/divider.svg" alt="divider" class="img-fluid">
+        </div>
+    </div>
 
-    <!-- Section Pray & Greeting -->
+    <!-- SECTION Ucapan & Doa -->
     <section id="pray-greeting" class="mt-5" data-aos="flip-right">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <h1 class="libre-baskerville text-center text-color-primary">Ucapan & Do'a</h1>
 
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="nama" class="libre-baskerville text-color-primary">Nama</label>
-                            <input type="text" name="nama" class="form-control" placeholder="Masukan Nama" required>
+                            <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukan Nama"
+                                required>
                         </div>
-
                         <div class="form-group">
                             <label for="ucapan" class="libre-baskerville text-color-primary">Ucapan</label>
-                            <textarea name="ucapan" class="form-control" placeholder="Masukan Ucapan"
+                            <textarea name="ucapan" id="ucapan" class="form-control" placeholder="Masukan Ucapan"
                                 required></textarea>
                         </div>
-
-
                         <div class="form-group">
-                            <label for="confirm" class="libre-baskerville text-color-primary">Konfirmasi
+                            <label for="confirm-select" class="libre-baskerville text-color-primary">Konfirmasi
                                 Kehadiran</label>
                             <select class="form-select" id="confirm-select" name="confirm" required>
                                 <option value="">Konfirmasi Kehadiran</option>
@@ -742,69 +722,48 @@
                                 <option value="tidak-hadir">&#10060; Tidak Hadir</option>
                             </select>
                         </div>
-
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary mt-2"> <i class="fa fa-paper-plane"></i>
-                                Kirim</button>
+                            <button type="submit" class="btn btn-primary mt-2">
+                                <i class="fa fa-paper-plane"></i> Kirim
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
+
             <div class="row mt-2">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="card shadow-sm mb-4">
                         <div class="card-body">
-
-                            <!-- Ucapan Utama -->
                             <div class="mb-3">
                                 <h6 class="fw-bold mb-0">Ajibarata Putra</h6>
-
                                 <hr class="my-2">
-                                <p class="mb-2 text-justify">
-                                    Semoga acara ini berjalan lancar dan membawa keberkahan untuk
-                                    semua yang hadir. Sukses selalu.
-                                </p>
-                                <small class="text-muted">
-                                    <i class="bi bi-clock"></i> 5 minutes ago
-                                </small>
+                                <p class="mb-2">Semoga acara ini berjalan lancar dan membawa keberkahan untuk semua yang
+                                    hadir. Sukses selalu.</p>
+                                <small class="text-muted">5 minutes ago</small>
                             </div>
-
-                            <!-- Divider -->
                             <hr>
-
-                            <!-- Daftar Komentar -->
                             <div class="comments bg-light p-3">
-
-                                <!-- Komentar 1 -->
                                 <div class="d-flex mb-3">
                                     <div class="flex-shrink-0">
                                         <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center"
-                                            style="width:36px;height:36px;">
-                                            RA
-                                        </div>
+                                            style="width:36px;height:36px;">RA</div>
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <strong>Reno & Asyifa</strong>
-                                        <p class="mb-1 text-justify">
-                                            Aamiin, semoga semuanya dimudahkan 🙏
-                                        </p>
+                                        <p class="mb-1">Aamiin, semoga semuanya dimudahkan 🙏</p>
                                         <small class="text-muted">2 minutes ago</small>
                                     </div>
                                 </div>
-
-
                             </div>
-
-
-
                         </div>
                     </div>
-
                 </div>
             </div>
+
             <div class="row mt-2">
-                <div class="col-lg-12">
-                    <nav aria-label="Page navigation example">
+                <div class="col-12">
+                    <nav aria-label="Navigasi halaman">
                         <ul class="pagination justify-content-center">
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
@@ -826,56 +785,45 @@
         </div>
     </section>
 
-    <section class="mt-5">
-        <img src="image/divider.svg" alt="divider" class="img-fluid">
-    </section>
+    <div class="mt-5 section-divider">
+        <div class="container p-5">
 
-    <section id="footer">
-        <footer>
+            <img src="image/divider.svg" alt="divider" class="img-fluid">
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="container p-5">
+
             <img src="image/galeri6.JPG" alt="footer" class="img-fluid img-footer" data-aos="fade-in">
             <div class="p-2 text-center mt-2" data-aos="fade-in">
-
                 <p class="bree-serif-regular">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
-                    Bapak/Ibu/Saudara/i berkenan hadir dan
-                    memberikan doa restu.</p>
-
+                    Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
                 <p class="bree-serif-regular">Atas kehadiran dan doa restunya, kami ucapkan terima kasih.</p>
             </div>
-            <p class="text-center" style="font-size: 1rem;" data-aos="fade-in"><span class="libre-baskerville">Made
-                    with</span> <i class="fa fa-heart" style="color: #660033;"></i> <span
-                    class="libre-baskerville">by</span> <span class="alex-brush-regular"
-                    style="font-size: 1.9rem !important;">Reno &
-                    Asyifa</span></p>
-        </footer>
-    </section>
-
+            <p class="text-center" style="font-size: 1rem;" data-aos="fade-in">
+                <span class="libre-baskerville">Made with</span>
+                <i class="fa fa-heart" style="color: #660033;"></i>
+                <span class="libre-baskerville">by</span>
+                <span class="alex-brush-regular" style="font-size: 1.9rem !important;">Reno & Asyifa</span>
+            </p>
+        </div>
+    </footer>
 
     <audio id="bg-music" preload="auto">
         <source src="music/wedding.mp3" type="audio/mpeg">
     </audio>
 
-
-    <!-- Dynamic JS -->
-    <script src="js/script.js"></script>
-
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
-
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
+    <script src="js/script.js"></script>
     <script src="js/countdown.js"></script>
-
-
     <script src="js/gallery.js"></script>
-
     <script src="js/paralax.js"></script>
-
-
     <script src="js/wedding-gift.js"></script>
 </body>
 

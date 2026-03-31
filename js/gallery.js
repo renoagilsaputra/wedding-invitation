@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const swiper = new Swiper('.gallery-swiper', {
+    new Swiper('.gallery-swiper', {
         loop: true,
+        slidesPerView: 1,
         spaceBetween: 24,
         preventClicks: false,
         preventClicksPropagation: false,
-        slideToClickedSlide: false,
 
         autoplay: {
             delay: 6000,
@@ -20,34 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
-        },
-
-        breakpoints: {
-            0: {
-                slidesPerView: 1
-            },
-            576: {
-                slidesPerView: 1
-            },
-            992: {
-                slidesPerView: 1
-            },
-            1200: {
-                slidesPerView: 1
-            },
-        
         }
     });
 
-    /* MODAL ZOOM */
-    const modal = document.getElementById('imageModal');
+    /* Modal Zoom */
+    const modal    = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.modal-close');
 
     document.addEventListener('click', (e) => {
         const trigger = e.target.closest('.zoom-trigger');
         if (!trigger) return;
-
         modal.style.display = 'flex';
         modalImg.src = trigger.dataset.src;
     });
