@@ -634,62 +634,156 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-8 col-lg-6 col-12">
 
-                                        <div class="atm-card p-4 text-white card-bca mb-2">
-                                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                                <span class="h4 fw-bold mb-0 italic">BANK BCA</span>
-                                                <i class="fa fa-wifi fa-rotate-90 opacity-75"></i>
+                                        <div class="atm-card card-bca mb-3">
+                                            <div class="atm-card__top">
+                                                <span class="atm-card__bank-name">BANK BCA</span>
+                                                <i class="fa fa-wifi fa-rotate-90 atm-card__signal"></i>
                                             </div>
-                                            <div class="chip mb-3"></div>
-                                            <div class="mb-2">
-                                                <label class="small opacity-75 d-block mb-1">Nomor Rekening</label>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <h3 class="mb-0 ls-wide" id="noRekening1">358 066 7065</h3>
-                                                    <button class="btn btn-link text-white p-0"
-                                                        onclick="copyRekening('noRekening1', 'copyAlert1')">
+                                            <div class="chip"></div>
+                                            <div class="atm-card__number-section">
+                                                <label class="atm-card__label">Nomor Rekening</label>
+                                                <div class="atm-card__number-row">
+                                                    <span class="atm-card__number" id="noRekening1">3580667065</span>
+                                                    <button class="atm-card__copy-btn"
+                                                        onclick="copyRekening('noRekening1', 'copyAlert1')"
+                                                        title="Salin">
                                                         <i class="fa fa-copy"></i>
                                                     </button>
                                                 </div>
+                                                <div id="copyAlert1" class="rekening-copy-toast d-none">Nomor BCA
+                                                    disalin!</div>
                                             </div>
-                                            <div class="d-flex justify-content-between align-items-end">
+                                            <div class="atm-card__footer">
                                                 <div>
-                                                    <p class="small opacity-75 mb-0">Nama Pemilik</p>
-                                                    <p class="fw-bold mb-0 text-uppercase">Reno Agil Saputra</p>
+                                                    <p class="atm-card__label">Nama Pemilik</p>
+                                                    <p class="atm-card__owner">Reno Agil Saputra</p>
                                                 </div>
-                                                <img src="image/bca.svg" height="35" alt="BCA">
+                                                <img src="image/bca.svg" class="atm-card__logo" alt="BCA">
                                             </div>
-                                        </div>
-                                        <div id="copyAlert1" class="alert alert-success d-none py-2 text-center mb-5"
-                                            role="alert">
-                                            Nomor BCA berhasil disalin!
                                         </div>
 
-                                        <div class="atm-card p-4 text-white card-bni mb-2">
-                                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                                <span class="h4 fw-bold mb-0 italic text-white">BANK BNI</span>
-                                                <i class="fa fa-wifi fa-rotate-90 opacity-75"></i>
+                                        <div class="atm-card card-bni mb-3">
+                                            <div class="atm-card__top">
+                                                <span class="atm-card__bank-name">BANK BNI</span>
+                                                <i class="fa fa-wifi fa-rotate-90 atm-card__signal"></i>
                                             </div>
-                                            <div class="chip mb-3"></div>
-                                            <div class="mb-2">
-                                                <label class="small opacity-75 d-block mb-1">Nomor Rekening</label>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <h3 class="mb-0 ls-wide" id="noRekening2">151 872 2603</h3>
-                                                    <button class="btn btn-link text-white p-0"
-                                                        onclick="copyRekening('noRekening2', 'copyAlert2')">
+                                            <div class="chip"></div>
+                                            <div class="atm-card__number-section">
+                                                <label class="atm-card__label">Nomor Rekening</label>
+                                                <div class="atm-card__number-row">
+                                                    <span class="atm-card__number" id="noRekening2">1518722603</span>
+                                                    <button class="atm-card__copy-btn"
+                                                        onclick="copyRekening('noRekening2', 'copyAlert2')"
+                                                        title="Salin">
                                                         <i class="fa fa-copy"></i>
                                                     </button>
                                                 </div>
+                                                <div id="copyAlert2" class="rekening-copy-toast d-none">Nomor BNI
+                                                    disalin!</div>
                                             </div>
-                                            <div class="d-flex justify-content-between align-items-end">
+                                            <div class="atm-card__footer">
                                                 <div>
-                                                    <p class="small opacity-75 mb-0">Nama Pemilik</p>
-                                                    <p class="fw-bold mb-0 text-uppercase">Asyifa Ajibarata P</p>
+                                                    <p class="atm-card__label">Nama Pemilik</p>
+                                                    <p class="atm-card__owner">Asyifa Ajibarata Putri</p>
                                                 </div>
-                                                <img src="image/bni.svg" height="35" alt="BNI">
+                                                <img src="image/bni.svg" class="atm-card__logo" alt="BNI">
                                             </div>
                                         </div>
-                                        <div id="copyAlert2" class="alert alert-success d-none py-2 text-center mb-5"
-                                            role="alert">
-                                            Nomor BNI berhasil disalin!
+
+                                        <!-- Card Kirim Hadiah -->
+                                        <div class="gift-address-card mb-2">
+                                            <div class="gift-address-card__header">
+                                                <div class="gift-address-card__icon">
+                                                    <i class="fa fa-gift"></i>
+                                                </div>
+                                                <div>
+                                                    <h5 class="gift-address-card__title mb-0">Kirim Hadiah</h5>
+                                                    <p class="gift-address-card__subtitle mb-0">Ingin mengirim hadiah
+                                                        fisik? Berikut alamat pengiriman kami.</p>
+                                                </div>
+                                            </div>
+                                            <div class="gift-address-card__divider"></div>
+                                            <div class="gift-address-card__body">
+
+                                                <div class="gift-info-row">
+                                                    <div class="gift-info-label">
+                                                        <i class="fa fa-user"></i>
+                                                        <span>Atas Nama</span>
+                                                    </div>
+                                                    <div class="gift-info-value-wrap">
+                                                        <span class="gift-info-value" id="giftNama">Asyifa Ajibarata
+                                                            Putri</span>
+                                                        <button class="gift-copy-btn"
+                                                            onclick="copyGiftInfo('giftNama', 'copyAlertNama')"
+                                                            title="Salin nama">
+                                                            <i class="fa fa-copy"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div id="copyAlertNama" class="gift-copy-toast d-none">Disalin!
+                                                    </div>
+                                                </div>
+
+                                                <div class="gift-info-row">
+                                                    <div class="gift-info-label">
+                                                        <i class="fa fa-map-marker"></i>
+                                                        <span>Alamat</span>
+                                                    </div>
+                                                    <div class="gift-info-value-wrap">
+                                                        <span class="gift-info-value" id="giftAlamat">Jalan Bangsadrana
+                                                            RT 3 RW 2, Desa Ajibarang Kulon, Kec. Ajibarang</span>
+                                                        <button class="gift-copy-btn"
+                                                            onclick="copyGiftInfo('giftAlamat', 'copyAlertAlamat')"
+                                                            title="Salin alamat">
+                                                            <i class="fa fa-copy"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div id="copyAlertAlamat" class="gift-copy-toast d-none">Disalin!
+                                                    </div>
+                                                </div>
+
+                                                <div class="gift-info-row">
+                                                    <div class="gift-info-label">
+                                                        <i class="fa fa-envelope"></i>
+                                                        <span>Kode Pos</span>
+                                                    </div>
+                                                    <div class="gift-info-value-wrap">
+                                                        <span class="gift-info-value" id="giftKodePos">53163</span>
+                                                        <button class="gift-copy-btn"
+                                                            onclick="copyGiftInfo('giftKodePos', 'copyAlertKodePos')"
+                                                            title="Salin kode pos">
+                                                            <i class="fa fa-copy"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div id="copyAlertKodePos" class="gift-copy-toast d-none">Disalin!
+                                                    </div>
+                                                </div>
+
+                                                <div class="gift-info-row">
+                                                    <div class="gift-info-label">
+                                                        <i class="fa fa-whatsapp"></i>
+                                                        <span>No. WhatsApp</span>
+                                                    </div>
+                                                    <div class="gift-info-value-wrap">
+                                                        <span class="gift-info-value" id="giftWA">+62
+                                                            895-3155-5955</span>
+                                                        <button class="gift-copy-btn"
+                                                            onclick="copyGiftInfo('giftWA', 'copyAlertWA')"
+                                                            title="Salin nomor WA">
+                                                            <i class="fa fa-copy"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div id="copyAlertWA" class="gift-copy-toast d-none">Disalin!</div>
+                                                </div>
+
+                                                <div class="gift-address-card__divider mt-2 mb-3"></div>
+
+                                                <button class="gift-copy-all-btn w-100" onclick="copyAllGiftInfo()">
+                                                    <i class="fa fa-copy me-2"></i> Salin Semua Informasi
+                                                </button>
+                                                <div id="copyAlertAll" class="gift-copy-toast d-none text-center mt-2">
+                                                    Semua informasi berhasil disalin!</div>
+
+                                            </div>
                                         </div>
 
                                     </div>

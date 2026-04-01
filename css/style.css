@@ -1034,69 +1034,184 @@ body:has(section.show) footer#footer {
     }
 }
 
+.offcanvas-body {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* ATM Card */
 .atm-card {
     width: 100%;
     border-radius: 18px;
-    padding: 18px;
+    padding: 20px;
     color: white;
     position: relative;
     overflow: hidden;
-    background-color: var(--primer-color);
-    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, var(--primer-color) 0%, #8B1A4A 60%, #5a0028 100%);
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(102, 0, 51, 0.3);
+}
+
+.atm-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.atm-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: 30px;
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.atm-card__top {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.atm-card h3 {
-    font-size: 20px;
-    letter-spacing: 2px;
-    word-break: break-all;
+.atm-card__bank-name {
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.ls-wide {
-    letter-spacing: 3px;
+.atm-card__signal {
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.chip {
+    width: 44px;
+    height: 34px;
+    background: linear-gradient(135deg, #ffd700, #b8860b);
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.atm-card__number-section {
+    flex: 1;
+}
+
+.atm-card__label {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+}
+
+.atm-card__number-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.atm-card__number {
     font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(18px, 6vw, 26px);
+    font-weight: 700;
+    letter-spacing: clamp(3px, 1.5vw, 6px);
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.atm-card__copy-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    flex-shrink: 0;
+    font-size: 14px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.atm-card__copy-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.08);
+}
+
+.atm-card__copy-btn:active {
+    transform: scale(0.95);
+}
+
+.rekening-copy-toast {
+    font-size: 11px;
+    color: #d4f5e3;
+    font-weight: 600;
+    margin-top: 5px;
+    animation: fadeInUp 0.2s ease;
+}
+
+.atm-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 2px;
+}
+
+.atm-card__owner {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.atm-card__logo {
+    height: 30px;
+    max-width: 70px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .italic {
     font-style: italic;
 }
 
-.chip {
-    width: 50px;
-    height: 40px;
-    background: linear-gradient(135deg, #ffd700, #b8860b);
-    border-radius: 8px;
-}
-
-.atm-card img {
-    max-height: 35px;
-    object-fit: contain;
-}
-
-.atm-card .d-flex {
-    flex-wrap: nowrap;
-}
-
-.atm-card .d-flex.gap-3 {
-    gap: 8px !important;
-}
-
 @media (max-width: 576px) {
     .atm-card {
-        padding: 14px;
+        padding: 16px;
         border-radius: 16px;
-        aspect-ratio: 16 / 11;
+        gap: 10px;
     }
 
-    .atm-card h3 {
+    .atm-card__bank-name {
         font-size: 16px;
-        letter-spacing: 1.5px;
-    }
-
-    .ls-wide {
-        font-size: 13px;
     }
 
     .chip {
@@ -1104,50 +1219,224 @@ body:has(section.show) footer#footer {
         height: 28px;
     }
 
-    .atm-card .mb-4 {
-        margin-bottom: 12px !important;
+    .atm-card__number {
+        font-size: clamp(16px, 5.5vw, 22px);
+        letter-spacing: clamp(2px, 1vw, 4px);
     }
 
-    .atm-card .mb-3 {
-        margin-bottom: 10px !important;
+    .atm-card__copy-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
     }
 
-    .atm-card img {
-        max-height: 28px;
+    .atm-card__owner {
+        font-size: 12px;
     }
 
-    .atm-card button {
-        font-size: 14px;
+    .atm-card__logo {
+        height: 24px;
     }
 }
 
 @media (max-width: 360px) {
     .atm-card {
-        padding: 12px;
-        aspect-ratio: 16 / 12;
+        padding: 14px;
     }
 
-    .atm-card h3 {
-        font-size: 14px;
+    .atm-card__number {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+}
+
+/* ================= GIFT ADDRESS CARD ================= */
+.gift-address-card {
+    background: linear-gradient(145deg, #fff9f5, #fff4ee);
+    border: 1px solid rgba(102, 0, 51, 0.15);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(102, 0, 51, 0.08);
+}
+
+.gift-address-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 20px 16px;
+    background: linear-gradient(135deg, var(--primer-color), #8B1A4A);
+}
+
+.gift-address-card__icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    flex-shrink: 0;
+    backdrop-filter: blur(4px);
+}
+
+.gift-address-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Libre Baskerville', serif;
+    letter-spacing: 0.5px;
+}
+
+.gift-address-card__subtitle {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+    margin-top: 3px;
+}
+
+.gift-address-card__divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(102, 0, 51, 0.15), transparent);
+    margin: 0 20px;
+}
+
+.gift-address-card__body {
+    padding: 16px 20px 20px;
+}
+
+.gift-info-row {
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.gift-info-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--primer-color);
+    opacity: 0.75;
+}
+
+.gift-info-label i {
+    font-size: 12px;
+    width: 14px;
+    text-align: center;
+}
+
+.gift-info-value-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(102, 0, 51, 0.1);
+    border-radius: 10px;
+    padding: 9px 12px;
+}
+
+.gift-info-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d1520;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.gift-copy-btn {
+    background: none;
+    border: none;
+    padding: 4px 6px;
+    color: var(--primer-color);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.15s;
+    font-size: 14px;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.gift-copy-btn:hover {
+    background: rgba(102, 0, 51, 0.1);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.gift-copy-btn:active {
+    transform: scale(0.95);
+}
+
+.gift-copy-toast {
+    font-size: 11px;
+    color: #1a7a4a;
+    font-weight: 600;
+    padding: 2px 8px;
+    background: #d4f5e3;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 4px;
+    animation: fadeInUp 0.2s ease;
+}
+
+.gift-copy-all-btn {
+    background: linear-gradient(135deg, var(--primer-color), #8B1A4A);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    letter-spacing: 0.3px;
+}
+
+.gift-copy-all-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.gift-copy-all-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 576px) {
+    .gift-address-card__header {
+        padding: 16px 16px 14px;
     }
 
-    .ls-wide {
-        font-size: 12px;
-        letter-spacing: 1px;
+    .gift-address-card__body {
+        padding: 14px 16px 16px;
     }
 
-    .chip {
-        width: 34px;
-        height: 26px;
+    .gift-address-card__icon {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    .gift-address-card__title {
+        font-size: 15px;
+    }
+
+    .gift-info-value {
+        font-size: 13px;
     }
 }
 
 .offcanvas-bottom.full-screen {
     height: 100vh !important;
-}
-
-.offcanvas-body {
-    overflow-y: auto;
 }
 
 .page-link {
